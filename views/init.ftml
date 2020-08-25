@@ -1,0 +1,31 @@
+const layout = require('./layout');
+const h = require('func-html');
+const { G } = require('func-helpers');
+
+module.exports = layout(
+  h('div.container',
+    h.if('initialized',
+      h.group(h('h2', 'Crypto initialized '), h('a', { href: '/test' }, 'Click me!')),
+      h('form', { method: 'POST' },
+        h('div.form-row',
+          h('div.form-group.mx-sm-3.mb-2',
+            h('label', { for: 'cryptPhrase' }, 'Crypto phrase'),
+            h('input#cryptPhrase.form-control',
+              {
+                type: 'text',
+                name: 'cryptPhrase',
+                class: { 'is-invalid': G('failed') }
+              }
+            ),
+            h('div.invalid-feedback', 'Wrong password')
+          )
+        ),
+        h('div.form-row',
+          h('div.form-group.mx-sm-3.mb-2',
+            h('button.btn.btn-primary.mb-2', { type: 'submit' }, 'Init')
+          )
+        )
+      )
+    )
+  )
+);

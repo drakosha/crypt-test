@@ -1,0 +1,22 @@
+{
+  "name": "crypt-test",
+  "version": "1.0.0",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1",
+    "func-helpers": "1.x",
+    "func-html": "1.x",
+    "ftml": "1.x",
+    "mocha": "^8.1.1",
+    "morgan": "^1.10.0"
+  },
+  "scripts": {
+    "dev": "nodemon ./bin/server.js",
+    "test": "./node_modules/.bin/mocha"
+  },
+  "devDependencies": {
+    "eslint-plugin-mocha": "^8.0.0",
+    "eslint-plugin-node": "^11.1.0",
+    "parcel-bundler": "^1.12.4"
+  }
+}

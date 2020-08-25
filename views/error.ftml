@@ -1,0 +1,8 @@
+const h = require('func-html');
+const { G } = require('func-helpers');
+
+module.exports = h('html', h('body',
+  h('h1', G('message')),
+  h('h2', G('error.status')),
+  h('pre', G('error.stack'))
+));
